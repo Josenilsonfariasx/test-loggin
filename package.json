@@ -4,14 +4,17 @@
   "description": "Simple product CRUD API with Pino logging",
   "main": "src/app.js",
   "scripts": {
-    "start": "node src/app.js",
-    "dev": "node --watch src/app.js"
+    "start": "node --require ./src/instrumentation.js src/app.js",
+    "dev": "node --watch --require ./src/instrumentation.js src/app.js"
   },
   "dependencies": {
     "@opentelemetry/auto-instrumentations-node": "^0.72.0",
+    "@opentelemetry/exporter-logs-otlp-http": "^0.214.0",
     "@opentelemetry/exporter-metrics-otlp-http": "^0.214.0",
     "@opentelemetry/exporter-trace-otlp-http": "^0.214.0",
     "@opentelemetry/resources": "^2.6.1",
+    "@opentelemetry/sdk-logs": "^0.214.0",
+    "@opentelemetry/sdk-metrics": "^2.6.1",
     "@opentelemetry/sdk-node": "^0.214.0",
     "@opentelemetry/semantic-conventions": "^1.40.0",
     "dotenv": "^17.4.1",

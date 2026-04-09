@@ -15,4 +15,4 @@ EXPOSE $PORT
 HEALTHCHECK --interval=30s --timeout=5s --start-period=15s --retries=3 \
   CMD sh -c "wget -qO- http://localhost:${PORT}/health || exit 1"
 
-CMD ["node", "src/app.js"]
+CMD ["npm", "start"]
