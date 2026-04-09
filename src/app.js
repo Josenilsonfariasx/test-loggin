@@ -1,3 +1,4 @@
+require("./instrumentation");
 require("dotenv").config();
 const express = require("express");
 const pinoHttp = require("pino-http");
